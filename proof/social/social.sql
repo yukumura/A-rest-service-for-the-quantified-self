@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Nov 25, 2015 alle 03:00
+-- Creato il: Nov 09, 2015 alle 23:12
 -- Versione del server: 5.6.25
 -- Versione PHP: 5.6.11
 
@@ -36,8 +36,6 @@ CREATE TABLE IF NOT EXISTS `utente` (
   `altezza` int(3) DEFAULT '0',
   `circonferenza_torace` int(11) NOT NULL DEFAULT '0',
   `girovita` int(11) NOT NULL DEFAULT '0',
-  `lunghezza_braccio` int(11) NOT NULL DEFAULT '0',
-  `lunghezza_gamba` int(11) NOT NULL DEFAULT '0',
   `circonferenza_fianchi` int(11) DEFAULT '0',
   `circonferenza_bacino` int(11) NOT NULL DEFAULT '0',
   `circonferenza_coscia_a` int(11) NOT NULL DEFAULT '0',
@@ -54,16 +52,14 @@ CREATE TABLE IF NOT EXISTS `utente` (
   `larghezza_bacino` int(11) NOT NULL DEFAULT '0',
   `distanza_cresta_illiaca` int(11) NOT NULL DEFAULT '0',
   `distanza_malleolo` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `utente`
 --
 
-INSERT INTO `utente` (`id`, `email`, `nome`, `cognome`, `sesso`, `peso`, `altezza`, `circonferenza_torace`, `girovita`, `lunghezza_braccio`, `lunghezza_gamba`, `circonferenza_fianchi`, `circonferenza_bacino`, `circonferenza_coscia_a`, `circonferenza_coscia_g`, `lunghezza_coscia`, `lunghezza_tibia`, `circonferenza_bicipite`, `lunghezza_omero`, `lunghezza_avambraccio`, `larghezza_spalle`, `larghezza_torace`, `larghezza_girovita`, `larghezza_fianchi`, `larghezza_bacino`, `distanza_cresta_illiaca`, `distanza_malleolo`) VALUES
-(0, 'admin', 'admin', 'admin', 'uomo', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(70, 'yukumurauo@gmail.com', 'Alberto', 'Cicilloni', 'uomo', 85, 185, 12, 1, 3, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 6),
-(71, 'arthurolinch@gmail.com', 'Giovanni', 'Scappato', 'uomo', 80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `utente` (`id`, `email`, `nome`, `cognome`, `sesso`, `peso`, `altezza`, `circonferenza_torace`, `girovita`, `circonferenza_fianchi`, `circonferenza_bacino`, `circonferenza_coscia_a`, `circonferenza_coscia_g`, `lunghezza_coscia`, `lunghezza_tibia`, `circonferenza_bicipite`, `lunghezza_omero`, `lunghezza_avambraccio`, `larghezza_spalle`, `larghezza_torace`, `larghezza_girovita`, `larghezza_fianchi`, `larghezza_bacino`, `distanza_cresta_illiaca`, `distanza_malleolo`) VALUES
+(69, 'yukumurauo@gmail.com', 'Alberto', 'Cicilloni', 'uomo', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 --
 -- Indici per le tabelle scaricate
@@ -84,7 +80,7 @@ ALTER TABLE `utente`
 -- AUTO_INCREMENT per la tabella `utente`
 --
 ALTER TABLE `utente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=70;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
