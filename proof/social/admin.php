@@ -19,9 +19,19 @@
 	if (isset($_SESSION['id']) && $_SESSION['id']==0){
 	?>
 <br>
+<div class="col-md-4">
+	<b><u>Information for dummies</u></b><br><br>
+	<label>
+	In questa pagina puoi cambiare i dati di ogni utente presente nella lista qui a fianco.<br><br>
+	E' possibile fare una ricerca fra gli utenti utilizzando la barra sopra la lista.<br><br>
+	Selezionare l'utente che si vuole visualizzare e modificare i valori delle celle.<br><br>
+	Attraverso il bottone salva si apportano le modifiche, mentre con il tasto cancella utente si elimina l'utente dal database.<br><br>
+	Per sloggare, puoi utilizzare <br><button class="btn btn-default" id="btnLogout">Logout</button>
+	</label>
+</div>
 <div class="leftArea">
-<div class="col-md-6">
-<div class="col-xs-4"><input type="text" class="form-control" id="searchKey"/></div>
+<div class="col-md-4">
+<div class="col-xs-9"><input type="text" class="form-control" id="searchKey"/></div>
 	<button class="btn btn-primary" id="btnSearch">Cerca</button><br>
 <ul class="list-group" id="utenteList"></ul> <!-- vengono visualizzati gli utenti del db -->
 <button class="btn btn-default" id="btnLogout">Logout</button>
@@ -31,7 +41,7 @@
 <form id="utenteForm">
 	
 <div class="mainArea">
-<div class="col-md-6">
+<div class="col-md-4">
 <button class="btn btn-primary" id="btnAdd">Nuovo Utente</button>
 <table class="table">
 <tr><td><label>Id:</label>

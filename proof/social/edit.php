@@ -30,10 +30,15 @@
 	?>
 <br>
 
+<div class="col-md-4">
+<b><u>Information for dummies</u></b><br><br>
+<label>In questa pagina puoi cambiare i tuoi dati,<br>basta modificare il valore contenuto nelle celle sottostanti.<br><br>Per tornare alla pagina precedente<br><a class="btn btn-danger" role="button" href="http://localhost/proof/social/">Torna indietro</a></label>
+</div>
+
 <form id="utenteForm">
 	
 <div class="mainArea">
-<div class="col-md-12">
+<div class="col-md-6">
 <table class="table">
 <tr><td><label>Id:</label>
 <input id="utenteId" value="<?php echo $utente->getId($email);?>" class="form-control" name="id" type="text" disabled />
@@ -173,7 +178,7 @@
 </form>
 
 
-	<?php } else{ echo "Non puoi accedere a questa pagina"; ?> <br><button class="btn btn-danger" id="btnBack">Torna indietro</button> <?php } ?>
+	<?php } else{ echo "Non puoi accedere a questa pagina"; ?> <br><a class="btn btn-danger" role="button" href="http://localhost/proof/social/">Torna indietro</a> <?php } ?>
 <script src="js/jquery-1.7.1.min.js"></script>
 <script src="js/admin.js"></script>
 </div>

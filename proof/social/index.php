@@ -23,7 +23,7 @@ if(!$fbuser){
 	$loginUrl = $facebook->getLoginUrl(array('redirect_uri'=>$homeurl,'scope'=>$fbPermissions));
 	$output = '<a href="'.$loginUrl.'"><img src="facebook_login_with_php/images/logofacebook.png" height="42" width="42"></a>'; 	
 }else{
-	$user_profile = $facebook->api('/me?fields=first_name,last_name,email,gender');
+	$user_profile = $facebook->api('/me?fields=first_name,last_name,email,gender,id');
 	checkuser($user_profile['email'], $user_profile['first_name'], $user_profile['last_name'], $user_profile['gender']);
 	$_SESSION['id_utente'] = $utente->getId($user_profile['email']);
 }
@@ -32,10 +32,11 @@ if(!$fbuser){
 <?php 
 
 	if(isset($user_profile)){ //se ha loggato mediante facebook
-	
+		
 			?>
-			<div class="col-md-6">
-			<h2>Queste sono le tue informazioni:</h2><br>
+			<div class="col-md-3"><h2><?php echo $user_profile['first_name'] . " " . $user_profile['last_name'];?><img src="https://graph.facebook.com/<?php echo $user_profile['id']?>/picture?width=200&height=200"></div>
+			<div class="col-md-4">
+			<h2>Le tue informazioni:</h2><br>
 			<form id="utenteForm">
 			<table class="table">
 			<tr>
@@ -149,7 +150,7 @@ if(!$fbuser){
 			</table>	
 			</form>	
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-5">
 			<h2>Informazioni derivate dalle precedenti:</h2><br>
 			<table class="table">
 			<tr>
@@ -255,12 +256,12 @@ if(!$fbuser){
 			</tr>
 			<?php } ?>
 			
-			<tr><td><?php if(isset($user_profile)){
+			<?php if(isset($user_profile)){
 				?>
 				
-				<br><a class="btn btn-success" role="button" href="http://localhost/proof/social/edit.php">Modifica le tue informazioni</a>
+				<tr><td><a class="btn btn-success" role="button" href="http://localhost/proof/social/edit.php">Modifica le tue informazioni</a></td><td>
 				<a class="btn btn-danger" role="button" href="http://localhost/proof/social/facebook_login_with_php/logout.php?logout">Logout</a>
-		<?php } ?><td></tr>
+		<?php } ?></td></tr>
 			</table>
 			</div>
 
