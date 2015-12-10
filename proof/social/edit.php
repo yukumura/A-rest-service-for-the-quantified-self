@@ -28,9 +28,24 @@
 		$poggio = mysql_fetch_row($risultato);
 		$email = $poggio[0];
 	?>
-<br>
-
-<div class="col-md-4">
+			<nav class="navbar navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="http://localhost/proof/social/">A rest service for the quantified self</a>
+					</div>
+				<div>
+      
+				<ul class="nav navbar-nav">
+					<li class="active" id="prima_pagina"><a href="#">Modifica le tue informazioni</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="http://localhost/proof/social/"><span class="glyphicon glyphicon-user"></span><?php echo " " . $utente->getNome($email) . " " . $utente->getCognome($email);?></a></li>
+					<li><a href="http://localhost/proof/social/facebook_login_with_php/logout.php?logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+				</ul>
+				</div>
+				</div>
+			</nav>
+<div class="col-md-3">
 <b><u>Information for dummies</u></b><br><br>
 <label>In questa pagina puoi cambiare i tuoi dati,<br>basta modificare il valore contenuto nelle celle sottostanti.<br><br>Per tornare alla pagina precedente<br><a class="btn btn-danger" role="button" href="http://localhost/proof/social/">Torna indietro</a></label>
 </div>
@@ -38,7 +53,7 @@
 <form id="utenteForm">
 	
 <div class="mainArea">
-<div class="col-md-6">
+<div class="col-md-3">
 <table class="table">
 <tr><td><label>Id:</label>
 <input id="utenteId" value="<?php echo $utente->getId($email);?>" class="form-control" name="id" type="text" disabled />
@@ -82,7 +97,10 @@
 <label>Lunghezza braccio:</label>
 <input type="number" value="<?php echo $utente->getLunghezzaBraccio($email);?>" class="form-control" id="lunghezza_braccio" name="lunghezza_braccio"/>
 </td></tr>
-
+</table>
+</div>
+<div class="col-md-3">
+<table class="table">
 <tr><td>
 <label>Lunghezza gamba:</label>
 <input type="number" value="<?php echo $utente->getLunghezzaGamba($email);?>" class="form-control" id="lunghezza_gamba" name="lunghezza_gamba"/>
@@ -97,6 +115,7 @@
 <label>Circonferenza bacino:</label>
 <input type="number" value="<?php echo $utente->getCirconferenzaBacino($email);?>" class="form-control" id="circonferenza_bacino" name="circonferenza_bacino"/>
 </td></tr>
+
 
 <tr><td>
 <label>Circonferenza coscia (in alto):</label>
@@ -127,7 +146,10 @@
 <label>Lunghezza omero:</label>
 <input type="number" value="<?php echo $utente->getLunghezzaOmero($email);?>" class="form-control" id="lunghezza_omero" name="lunghezza_omero"/>
 </td></tr>
-
+</table>
+</div>
+<div class="col-md-3">
+<table class="table">
 <tr><td>
 <label>Lunghezza avambraccio:</label>
 <input type="number" value="<?php echo $utente->getLunghezzaAvambraccio($email);?>" class="form-control" id="lunghezza_avambraccio" name="lunghezza_avambraccio"/>

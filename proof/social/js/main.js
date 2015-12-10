@@ -9,6 +9,20 @@ $('#btnSave').click(function() {
 	return false;
 });
 
+$('#prima_pagina').click(function(){
+	$(this).addClass('active');
+	$('#seconda_pagina').removeClass('active');
+	$('.seconda_pagina').addClass('hidden');
+	$('.prima_pagina').removeClass('hidden');
+});
+
+$('#seconda_pagina').click(function(){
+	$(this).addClass('active');
+	$('#prima_pagina').removeClass('active');
+	$('.prima_pagina').addClass('hidden');
+	$('.seconda_pagina').removeClass('hidden');
+});
+
 function updateUtente() {
 	console.log('updateUtente');
 	$.ajax({

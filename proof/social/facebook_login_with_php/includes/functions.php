@@ -23,7 +23,7 @@ function checkuser($email, $nome, $cognome, $sesso){
 }
 
 function checkadmin($email, $password){
-	$query="SELECT COUNT(*) as total FROM utente WHERE email LIKE '$email' and nome LIKE '$password'";
+	$query="SELECT COUNT(*) as total FROM utente WHERE email LIKE '$email' and nome LIKE '$password'"; // funzione controllo dati
 	$risultato = mysql_query($query) or die("Query non valida: " . mysql_error());
 	$row = mysql_fetch_assoc($risultato);
 	

@@ -37,6 +37,11 @@ body {
   border-top-right-radius: 0;
 }
 
+.hidden{
+	display: none;
+}
+
+
 #scritta{
 	font-size: 13px;
 	font-weight: bold;
@@ -45,6 +50,14 @@ body {
 
 #centrato{
 	text-align: center;
+}
+
+#allineato_d{
+	text-align: right;
+}
+
+#allineato_s{
+	text-align: left;
 }
 
 .form-signin-heading{

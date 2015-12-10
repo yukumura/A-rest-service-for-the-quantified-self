@@ -9,7 +9,6 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->	
 <link href="bootstrap/css/signin.css" rel="stylesheet">
-
 </head>
 <body>
 <div class="container">
@@ -34,124 +33,160 @@ if(!$fbuser){
 	if(isset($user_profile)){ //se ha loggato mediante facebook
 		
 			?>
-			<div class="col-md-3"><h2><?php echo $user_profile['first_name'] . " " . $user_profile['last_name'];?><img src="https://graph.facebook.com/<?php echo $user_profile['id']?>/picture?width=200&height=200"></div>
-			<div class="col-md-4">
-			<h2>Le tue informazioni:</h2><br>
+			<nav class="navbar navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="http://localhost/proof/social/">A rest service for the quantified self</a>
+					</div>
+				<div>
+      
+				<ul class="nav navbar-nav">
+					<li class="active" id="prima_pagina"><a href="#">Informazioni principali</a></li>
+					<li id="seconda_pagina"><a href="#">Informazioni derivate</a></li>
+				</ul>
+      
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="http://localhost/proof/social/"><span class="glyphicon glyphicon-user"></span><?php echo " " . $user_profile['first_name'] . " " . $user_profile['last_name'];?></a></li>
+					<li><a href="http://localhost/proof/social/facebook_login_with_php/logout.php?logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+				</ul>
+				</div>
+				</div>
+			</nav>
+		
+		
+		
+		
+		
+			<div class="col-md-3"><br><img src="https://graph.facebook.com/<?php echo $user_profile['id']?>/picture?width=200&height=200"><br><br><a class="btn btn-success" role="button" href="http://localhost/proof/social/edit">Modifica le tue informazioni</a></div>
+						
+			<div class="prima_pagina">
+				<div class="col-md-9">
+				<h2>Informazioni principali</h2><br>
 			<form id="utenteForm">
-			<table class="table">
-			<tr>
-			<td><b>Id: </b></td>
-			<td><?php $_SESSION['id'] = $utente->getId($user_profile['email']); $_SESSION['email'] = $user_profile['email']; echo $_SESSION['id'];?></td>
-			</tr>
-			
-			<td><b>Nome: </b></td>
-			
-			<td><?php echo $utente->getNome($user_profile['email']);?></td>
-			</tr>
-			
-			<tr><td><b>Cognome: </b></td>
-			
-			<td><?php echo $utente->getCognome($user_profile['email']);?></td>
-			</tr>
-			
-			<tr><td><b>Sesso: </b></td>
-			<td><?php echo $utente->getSesso($user_profile['email']);?></td>
-			</tr>
-			
-			<tr><td><b>Peso: </b></td>
-			<td><?php echo $utente->getPeso($user_profile['email']);?> kg</td>
-			<!--<td><input type="number" class="form-control" id="peso" value="<?php echo $utente->getPeso($user_profile['email']);?>" name="peso"/></td></tr>-->
-			
-			<tr><td><b>Altezza: </b></td>
-			<td><?php echo $utente->getAltezza($user_profile['email']);?> cm</td>
-			<!--<td><input type="number" class="form-control" id="altezza" value="<?php echo $utente->getAltezza($user_profile['email']);?>" name="altezza"/></td></tr>-->
-			
-			<tr><td><b>Circonferenza torace: </b></td>
-			<td><?php echo $utente->getCirconferenzaTorace($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="circonferenza_torace" value="<?php echo $utente->getCirconferenzaTorace($user_profile['email']);?>" name="circonferenza_torace"/></td></tr>-->
-			
-			<tr><td><b>Girovita: </b></td>
-			<td><?php echo $utente->getGirovita($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="girovita" value="<?php echo $utente->getGirovita($user_profile['email']);?>" name="girovita"/></td></tr>-->
-			
-			<tr><td><b>Lunghezza braccio: </b></td>
-			<td><?php echo $utente->getLunghezzaBraccio($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="lunghezza_braccio" value="<?php echo $utente->getLunghezzaBraccio($user_profile['email']);?>" name="lunghezza_braccio"/></td></tr>-->
-			
-			<tr><td><b>Lunghezza gamba: </b></td>
-			<td><?php echo $utente->getLunghezzaGamba($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="lunghezza_gamba" value="<?php echo $utente->getLunghezzaGamba($user_profile['email']);?>" name="lunghezza_gamba"/></td></tr>-->
-			
-			<tr><td><b>Circonferenza fianchi: </b></td>
-			<td><?php echo $utente->getCirconferenzaFianchi($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="circonferenza_fianchi" value="<?php echo $utente->getCirconferenzaFianchi($user_profile['email']);?>" name="circonferenza_fianchi"/></td></tr>-->
-			
-			<tr><td><b>Circonferenza bacino: </b></td>
-			<td><?php echo $utente->getCirconferenzaBacino($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="circonferenza_bacino" value="<?php echo $utente->getCirconferenzaBacino($user_profile['email']);?>" name="circonferenza_bacino"/></td></tr>-->
-			
-			<tr><td><b>Circonferenza coscia (in alto): </b></td>
-			<td><?php echo $utente->getCirconferenzaCosciaAlto($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="circonferenza_coscia_a" value="<?php echo $utente->getCirconferenzaCosciaAlto($user_profile['email']);?>" name="circonferenza_coscia_a"/></td></tr>-->
-			
-			<tr><td><b>Circonferenza coscia<br>(sopra il ginocchio): </b></td>
-			<td><?php echo $utente->getCirconferenzaCosciaGinocchio($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="circonferenza_coscia_g" value="<?php echo $utente->getCirconferenzaCosciaGinocchio($user_profile['email']);?>" name="circonferenza_coscia_g"/></td></tr>-->
-			
-			<tr><td><b>Lunghezza coscia: </b></td>
-			<td><?php echo $utente->getLunghezzaCoscia($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="lunghezza_coscia" value="<?php echo $utente->getLunghezzaCoscia($user_profile['email']);?>" name="lunghezza_coscia"/></td></tr>-->
-			
-			<tr><td><b>Lunghezza tibia: </b></td>
-			<td><?php echo $utente->getLunghezzaTibia($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="lunghezza_tibia" value="<?php echo $utente->getLunghezzaTibia($user_profile['email']);?>" name="lunghezza_tibia"/></td></tr>-->
-			
-			<tr><td><b>Circonferenza bicipite: </b></td>
-			<td><?php echo $utente->getCirconferenzaBicipite($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="circonferenza_bicipite" value="<?php echo $utente->getCirconferenzaBicipite($user_profile['email']);?>" name="circonferenza_bicipite"/></td></tr>-->
-			
-			<tr><td><b>Lunghezza omero: </b></td>
-			<td><?php echo $utente->getLunghezzaOmero($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="lunghezza_omero" value="<?php echo $utente->getLunghezzaOmero($user_profile['email']);?>" name="lunghezza_omero"/></td></tr>-->
-			
-			<tr><td><b>Lunghezza avambraccio: </b></td>
-			<td><?php echo $utente->getLunghezzaAvambraccio($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="lunghezza_avambraccio" value="<?php echo $utente->getLunghezzaAvambraccio($user_profile['email']);?>" name="lunghezza_avambraccio"/></td></tr>-->
-			
-			<tr><td><b>Larghezza spalle: </b></td>
-			<td><?php echo $utente->getLarghezzaSpalle($user_profile['email']);	?></td>
-			<!--<td><input type="number" class="form-control" id="larghezza_spalle" value="<?php echo $utente->getLarghezzaSpalle($user_profile['email']);	?>" name="larghezza_spalle"/></td></tr>-->
-			
-			<tr><td><b>Larghezza torace: </b></td>
-			<td><?php echo $utente->getLarghezzaTorace($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="larghezza_torace" value="<?php echo $utente->getLarghezzaTorace($user_profile['email']);?>" name="larghezza_torace"/></td></tr>-->
-			
-			<tr><td><b>Larghezza girovita: </b></td>
-			<td><?php echo $utente->getLarghezzaGirovita($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="larghezza_girovita" value="<?php echo $utente->getLarghezzaGirovita($user_profile['email']);?>" name="larghezza_girovita"/></td></tr>-->
-			
-			<tr><td><b>Larghezza fianchi: </b></td>
-			<td><?php echo $utente->getLarghezzaFianchi($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="larghezza_fianchi" value="<?php echo $utente->getLarghezzaFianchi($user_profile['email']);?>" name="larghezza_fianchi"/></td></tr>-->
-			
-			<tr><td><b>Larghezza bacino: </b></td>
-			<td><?php echo $utente->getLarghezzaBacino($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="larghezza_bacino" value="<?php echo $utente->getLarghezzaBacino($user_profile['email']);?>" name="larghezza_bacino"/></td></tr>-->
-			
-			<tr><td><b>Distanza cresta iliaca-anca: </b></td>
-			<td><?php echo $utente->getDistanzaCrestaIlliaca($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="distanza_cresta_illiaca" value="<?php echo $utente->getDistanzaCrestaIlliaca($user_profile['email']);?>" name="distanza_cresta_illiaca"/></td></tr>-->
-			
-			<tr><td><b>Distanza malleolo-pavimento: </b></td>
-			<td><?php echo $utente->getDistanzaMalleoloPavimento($user_profile['email']);?></td>
-			<!--<td><input type="number" class="form-control" id="distanza_malleolo" value="<?php echo $utente->getDistanzaMalleoloPavimento($user_profile['email']);?>" name="distanza_malleolo"/></td></tr>-->
-			
-			<!--<tr><td></td><td></td><td><button class="btn btn-default" id="btnSave">Apporta modifiche</button></td></tr>-->
-			</table>	
+				<div class="col-md-4">
+				<table class="table">
+				<tr>
+					<td><b>Id: </b></td>
+					<td><?php $_SESSION['id'] = $utente->getId($user_profile['email']); $_SESSION['email'] = $user_profile['email']; echo $_SESSION['id'];?></td>
+				</tr>
+				<tr>
+					<td><b>Nome: </b></td>
+					<td><?php echo $utente->getNome($user_profile['email']);?></td>
+				</tr>
+				<tr>
+					<td><b>Cognome: </b></td>
+					<td><?php echo $utente->getCognome($user_profile['email']);?></td>
+				</tr>			
+				<tr>
+					<td><b>Sesso: </b></td>
+					<td><?php echo $utente->getSesso($user_profile['email']);?></td>
+				</tr>			
+				<tr>
+					<td><b>Peso: </b></td>
+					<td><?php echo $utente->getPeso($user_profile['email']);?> kg</td>
+				</tr>
+				<tr>
+					<td><b>Altezza: </b></td>
+					<td><?php echo $utente->getAltezza($user_profile['email']);?> cm</td>
+				</tr>
+				<tr>
+					<td><b>Circonferenza torace: </b></td>
+					<td><?php echo $utente->getCirconferenzaTorace($user_profile['email']);?></td>
+				</tr>
+				<tr>
+					<td><b>Girovita: </b></td>
+					<td><?php echo $utente->getGirovita($user_profile['email']);?></td>		
+				</tr>
+				<tr>
+					<td><b>Lunghezza braccio: </b></td>
+					<td><?php echo $utente->getLunghezzaBraccio($user_profile['email']);?></td>		
+				</tr>
+				</table>
+				</div>
+				<div class="col-md-4">
+				<table class="table">
+				<tr>
+					<td><b>Lunghezza gamba: </b></td>
+					<td><?php echo $utente->getLunghezzaGamba($user_profile['email']);?></td>
+				</tr>
+				<tr>
+					<td><b>Circonferenza fianchi: </b></td>
+					<td><?php echo $utente->getCirconferenzaFianchi($user_profile['email']);?></td>	
+				</tr>
+				<tr>
+					<td><b>Circonferenza bacino: </b></td>
+					<td><?php echo $utente->getCirconferenzaBacino($user_profile['email']);?></td>					
+				</tr>
+				<tr>
+					<td><b>Circonferenza coscia<br>(in alto): </b></td>
+					<td><?php echo $utente->getCirconferenzaCosciaAlto($user_profile['email']);?></td>				
+				</tr>
+				<tr>
+					<td><b>Circonferenza coscia<br>(sopra il ginocchio): </b></td>
+					<td><?php echo $utente->getCirconferenzaCosciaGinocchio($user_profile['email']);?></td>		
+				</tr>
+				<tr>
+					<td><b>Lunghezza coscia: </b></td>
+					<td><?php echo $utente->getLunghezzaCoscia($user_profile['email']);?></td>		
+				</tr>
+				<tr>
+					<td><b>Lunghezza tibia: </b></td>
+					<td><?php echo $utente->getLunghezzaTibia($user_profile['email']);?></td>		
+				</tr>
+				<tr>
+					<td><b>Circonferenza bicipite: </b></td>
+					<td><?php echo $utente->getCirconferenzaBicipite($user_profile['email']);?></td>		
+				</tr>
+				<tr>
+					<td><b>Lunghezza omero: </b></td>
+					<td><?php echo $utente->getLunghezzaOmero($user_profile['email']);?></td>		
+				</tr>
+				</table>
+				</div>
+				<div class="col-md-4">
+				<table class="table">
+				<tr>
+					<td><b>Lunghezza avambraccio: </b></td>
+					<td><?php echo $utente->getLunghezzaAvambraccio($user_profile['email']);?></td>		
+				</tr>
+				<tr>
+					<td><b>Larghezza spalle: </b></td>
+					<td><?php echo $utente->getLarghezzaSpalle($user_profile['email']);	?></td>		
+				</tr>
+				<tr>
+					<td><b>Larghezza torace: </b></td>
+					<td><?php echo $utente->getLarghezzaTorace($user_profile['email']);?></td>
+				</tr>
+				<tr>
+					<td><b>Larghezza girovita: </b></td>
+					<td><?php echo $utente->getLarghezzaGirovita($user_profile['email']);?></td>			
+				</tr>
+				<tr>
+					<td><b>Larghezza fianchi: </b></td>
+					<td><?php echo $utente->getLarghezzaFianchi($user_profile['email']);?></td>			
+				</tr>
+				<tr>
+					<td><b>Larghezza bacino: </b></td>
+					<td><?php echo $utente->getLarghezzaBacino($user_profile['email']);?></td>
+				</tr>
+				<tr>
+					<td><b>Distanza <br>cresta iliaca-anca: </b></td>
+					<td><?php echo $utente->getDistanzaCrestaIlliaca($user_profile['email']);?></td>		
+				</tr>
+				<tr>
+					<td><b>Distanza <br>malleolo-pavimento: </b></td>
+					<td><?php echo $utente->getDistanzaMalleoloPavimento($user_profile['email']);?></td>
+				</tr>
+				</table>
+				</div>
 			</form>	
 			</div>
-			<div class="col-md-5">
-			<h2>Informazioni derivate dalle precedenti:</h2><br>
+			</div>
+			
+			
+			<div class="seconda_pagina hidden">
+			<div class="col-md-9">
+			<h2>Informazioni derivate dalle precedenti</h2><br>
 			<table class="table">
 			<tr>
 			<td><b>BMI: </b></td>
@@ -255,14 +290,8 @@ if(!$fbuser){
 			<td><?php if($utente->getGirovita($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_fg = ($utente->getCirconferenzaFianchi($user_profile['email']) / $utente->getGirovita($user_profile['email'])); echo $rapporto_fg;}?></td>
 			</tr>
 			<?php } ?>
-			
-			<?php if(isset($user_profile)){
-				?>
-				
-				<tr><td><a class="btn btn-success" role="button" href="http://localhost/proof/social/edit.php">Modifica le tue informazioni</a></td><td>
-				<a class="btn btn-danger" role="button" href="http://localhost/proof/social/facebook_login_with_php/logout.php?logout">Logout</a>
-		<?php } ?></td></tr>
 			</table>
+			</div>
 			</div>
 
 			

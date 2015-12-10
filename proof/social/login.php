@@ -17,7 +17,7 @@
 					$_SESSION['password'] = $password; */
 					$_SESSION['id'] = $utente->getId($email);
 					
-					header("location: http://localhost/proof/social/admin.php");
+					header("location: http://localhost/proof/social/admin");
 				}else{
 					
 					header("location: index.php?err=1");
