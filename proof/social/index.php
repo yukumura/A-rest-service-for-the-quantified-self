@@ -91,15 +91,15 @@ if(!$fbuser){
 				</tr>
 				<tr>
 					<td><b>Circonferenza torace: </b></td>
-					<td><?php echo $utente->getCirconferenzaTorace($user_profile['email']);?></td>
+					<td><?php echo $utente->getCirconferenzaTorace($user_profile['email']);?> cm</td>
 				</tr>
 				<tr>
 					<td><b>Girovita: </b></td>
-					<td><?php echo $utente->getGirovita($user_profile['email']);?></td>		
+					<td><?php echo $utente->getGirovita($user_profile['email']);?> cm</td>		
 				</tr>
 				<tr>
 					<td><b>Lunghezza braccio: </b></td>
-					<td><?php echo $utente->getLunghezzaBraccio($user_profile['email']);?></td>		
+					<td><?php echo $utente->getLunghezzaBraccio($user_profile['email']);?> cm</td>		
 				</tr>
 				</table>
 				</div>
@@ -107,75 +107,75 @@ if(!$fbuser){
 				<table class="table">
 				<tr>
 					<td><b>Lunghezza gamba: </b></td>
-					<td><?php echo $utente->getLunghezzaGamba($user_profile['email']);?></td>
+					<td><?php echo $utente->getLunghezzaGamba($user_profile['email']);?> cm</td>
 				</tr>
 				<tr>
 					<td><b>Circonferenza fianchi: </b></td>
-					<td><?php echo $utente->getCirconferenzaFianchi($user_profile['email']);?></td>	
+					<td><?php echo $utente->getCirconferenzaFianchi($user_profile['email']);?> cm</td>	
 				</tr>
 				<tr>
 					<td><b>Circonferenza bacino: </b></td>
-					<td><?php echo $utente->getCirconferenzaBacino($user_profile['email']);?></td>					
+					<td><?php echo $utente->getCirconferenzaBacino($user_profile['email']);?> cm</td>					
 				</tr>
 				<tr>
 					<td><b>Circonferenza coscia<br>(in alto): </b></td>
-					<td><?php echo $utente->getCirconferenzaCosciaAlto($user_profile['email']);?></td>				
+					<td><?php echo $utente->getCirconferenzaCosciaAlto($user_profile['email']);?> cm</td>				
 				</tr>
 				<tr>
 					<td><b>Circonferenza coscia<br>(sopra il ginocchio): </b></td>
-					<td><?php echo $utente->getCirconferenzaCosciaGinocchio($user_profile['email']);?></td>		
+					<td><?php echo $utente->getCirconferenzaCosciaGinocchio($user_profile['email']);?> cm</td>		
 				</tr>
 				<tr>
 					<td><b>Lunghezza coscia: </b></td>
-					<td><?php echo $utente->getLunghezzaCoscia($user_profile['email']);?></td>		
+					<td><?php echo $utente->getLunghezzaCoscia($user_profile['email']);?> cm</td>		
 				</tr>
 				<tr>
 					<td><b>Lunghezza tibia: </b></td>
-					<td><?php echo $utente->getLunghezzaTibia($user_profile['email']);?></td>		
+					<td><?php echo $utente->getLunghezzaTibia($user_profile['email']);?> cm</td>		
 				</tr>
 				<tr>
 					<td><b>Circonferenza bicipite: </b></td>
-					<td><?php echo $utente->getCirconferenzaBicipite($user_profile['email']);?></td>		
+					<td><?php echo $utente->getCirconferenzaBicipite($user_profile['email']);?> cm</td>		
 				</tr>
 				<tr>
 					<td><b>Lunghezza omero: </b></td>
-					<td><?php echo $utente->getLunghezzaOmero($user_profile['email']);?></td>		
+					<td><?php echo $utente->getLunghezzaOmero($user_profile['email']);?> cm</td>		
 				</tr>
 				</table>
 				</div>
 				<div class="col-md-4">
 				<table class="table">
 				<tr>
-					<td><b>Lunghezza avambraccio: </b></td>
-					<td><?php echo $utente->getLunghezzaAvambraccio($user_profile['email']);?></td>		
+					<td><b>Lunghezza avambraccio:</b></td>
+					<td><?php echo $utente->getLunghezzaAvambraccio($user_profile['email']);?>cm</td>		
 				</tr>
 				<tr>
 					<td><b>Larghezza spalle: </b></td>
-					<td><?php echo $utente->getLarghezzaSpalle($user_profile['email']);	?></td>		
+					<td><?php echo $utente->getLarghezzaSpalle($user_profile['email']);	?>cm</td>		
 				</tr>
 				<tr>
 					<td><b>Larghezza torace: </b></td>
-					<td><?php echo $utente->getLarghezzaTorace($user_profile['email']);?></td>
+					<td><?php echo $utente->getLarghezzaTorace($user_profile['email']);?>cm</td>
 				</tr>
 				<tr>
 					<td><b>Larghezza girovita: </b></td>
-					<td><?php echo $utente->getLarghezzaGirovita($user_profile['email']);?></td>			
+					<td><?php echo $utente->getLarghezzaGirovita($user_profile['email']);?>cm</td>			
 				</tr>
 				<tr>
 					<td><b>Larghezza fianchi: </b></td>
-					<td><?php echo $utente->getLarghezzaFianchi($user_profile['email']);?></td>			
+					<td><?php echo $utente->getLarghezzaFianchi($user_profile['email']);?>cm</td>			
 				</tr>
 				<tr>
 					<td><b>Larghezza bacino: </b></td>
-					<td><?php echo $utente->getLarghezzaBacino($user_profile['email']);?></td>
+					<td><?php echo $utente->getLarghezzaBacino($user_profile['email']);?>cm</td>
 				</tr>
 				<tr>
 					<td><b>Distanza <br>cresta iliaca-anca: </b></td>
-					<td><?php echo $utente->getDistanzaCrestaIlliaca($user_profile['email']);?></td>		
+					<td><?php echo $utente->getDistanzaCrestaIlliaca($user_profile['email']);?>cm</td>		
 				</tr>
 				<tr>
 					<td><b>Distanza <br>malleolo-pavimento: </b></td>
-					<td><?php echo $utente->getDistanzaMalleoloPavimento($user_profile['email']);?></td>
+					<td><?php echo $utente->getDistanzaMalleoloPavimento($user_profile['email']);?>cm</td>
 				</tr>
 				</table>
 				</div>
@@ -190,29 +190,29 @@ if(!$fbuser){
 			<table class="table">
 			<tr>
 			<td><b>BMI: </b></td>
-			<td><?php if($utente->getAltezza($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $bmi = $utente->getPeso($user_profile['email']) / pow($utente->getAltezza($user_profile['email']) , 2); echo $bmi;}?></td>
+			<td><?php if($utente->getAltezza($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $bmi = $utente->getPeso($user_profile['email']) / pow($utente->getAltezza($user_profile['email']) , 2); echo $bmi . " cm";}?> </td>
 			</tr>
 			
 			<tr>
 			<td><b>Circonferenza coscia <br>(media delle due circonferenze):</b></td>
-			<td><?php $circonferenza_coscia = (($utente->getCirconferenzaCosciaAlto($user_profile['email']) + $utente->getCirconferenzaCosciaGinocchio($user_profile['email']))/2); if($circonferenza_coscia==0) echo $circonferenza_coscia;?></td>
+			<td><?php $circonferenza_coscia = (($utente->getCirconferenzaCosciaAlto($user_profile['email']) + $utente->getCirconferenzaCosciaGinocchio($user_profile['email']))/2); if($circonferenza_coscia==0) echo $circonferenza_coscia . " cm";?></td>
 			</tr>
 			
 			<tr>
 			<td><b>Log(BMI):</b></td>
-			<td><?php if(isset($bmi)) echo log($bmi); else echo "le tue informazioni sono da modificare";?></td>
+			<td><?php if(isset($bmi)) echo log($bmi) . " cm"; else echo "le tue informazioni sono da modificare";?></td>
 			</tr>
 			
 			<?php if(($utente->getSesso($user_profile['email'])=='donna')){
 			?>
 			<tr>
 			<td><b>Rapporto larghezza torace su altezza:</b></td>
-			<td><?php if($utente->getAltezza($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_ta = ($utente->getLarghezzaTorace($user_profile['email'])/$utente->getAltezza($user_profile['email'])); echo $rapporto_ta;}?></td>
+			<td><?php if($utente->getAltezza($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_ta = ($utente->getLarghezzaTorace($user_profile['email'])/$utente->getAltezza($user_profile['email'])); echo $rapporto_ta . " cm";}?></td>
 			</tr><?php
 			}else{ ?>
 			<tr>
 			<td><b>Rapporto circonferenza torace su altezza:</b></td>
-			<td><?php if($utente->getAltezza($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_ta = ($utente->getCirconferenzaTorace($user_profile['email'])/$utente->getAltezza($user_profile['email'])); echo $rapporto_ta;}?></td>
+			<td><?php if($utente->getAltezza($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_ta = ($utente->getCirconferenzaTorace($user_profile['email'])/$utente->getAltezza($user_profile['email'])); echo $rapporto_ta . " cm";}?></td>
 			</tr>
 			<?php } ?>
 			
@@ -220,35 +220,35 @@ if(!$fbuser){
 			?>
 			<tr>
 			<td><b>Rapporto larghezza fianchi su altezza:</b></td>
-			<td><?php if($utente->getAltezza($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_fa = ($utente->getLarghezzaFianchi($user_profile['email'])/$utente->getAltezza($user_profile['email'])); echo $rapporto_fa;}?></td>
+			<td><?php if($utente->getAltezza($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_fa = ($utente->getLarghezzaFianchi($user_profile['email'])/$utente->getAltezza($user_profile['email'])); echo $rapporto_fa . " cm";}?></td>
 			</tr><?php
 			}else{ ?>
 			<tr>
 			<td><b>Rapporto circonferenza fianchi su altezza:</b></td>
-			<td><?php if($utente->getAltezza($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_fa = ($utente->getCirconferenzaFianchi($user_profile['email'])/$utente->getAltezza($user_profile['email'])); echo $rapporto_fa;}?></td>
+			<td><?php if($utente->getAltezza($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_fa = ($utente->getCirconferenzaFianchi($user_profile['email'])/$utente->getAltezza($user_profile['email'])); echo $rapporto_fa . " cm";}?></td>
 			</tr>
 			<?php } ?>
 			
 			<tr>
 			<td><b>Rapporto bicipite su lunghezza braccio:</b></td>
-			<td><?php if($utente->getLunghezzaBraccio($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_bb = ($utente->getCirconferenzaBicipite($user_profile['email']) / $utente->getLunghezzaBraccio($user_profile['email'])); echo $rapporto_bb;}?></td>
+			<td><?php if($utente->getLunghezzaBraccio($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_bb = ($utente->getCirconferenzaBicipite($user_profile['email']) / $utente->getLunghezzaBraccio($user_profile['email'])); echo $rapporto_bb . " cm";}?></td>
 			</tr>
 			
 			<tr>
 			<td><b>Rapporto circonferenza coscia su lunghezza gamba:</b></td>
-			<td><?php if($utente->getLunghezzaGamba($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_cg = ((($utente->getCirconferenzaCosciaAlto($user_profile['email']) + $utente->getCirconferenzaCosciaGinocchio($user_profile['email']))/2) / $utente->getLunghezzaGamba($user_profile['email'])); echo $rapporto_cg;}?></td>
+			<td><?php if($utente->getLunghezzaGamba($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_cg = ((($utente->getCirconferenzaCosciaAlto($user_profile['email']) + $utente->getCirconferenzaCosciaGinocchio($user_profile['email']))/2) / $utente->getLunghezzaGamba($user_profile['email'])); echo $rapporto_cg . " cm";}?></td>
 			</tr>
 			
 			<?php if(($utente->getSesso($user_profile['email'])=='donna')){
 			?>
 			<tr>
 			<td><b>Differenza tra larghezza torace e girovita:</b></td>
-			<td><?php $differenza_tg = ($utente->getLarghezzaTorace($user_profile['email']) - $utente->getGirovita($user_profile['email'])); echo $differenza_tg;?></td>
+			<td><?php $differenza_tg = ($utente->getLarghezzaTorace($user_profile['email']) - $utente->getGirovita($user_profile['email'])); echo $differenza_tg . " cm";?></td>
 			</tr><?php
 			}else{ ?>
 			<tr>
 			<td><b>Differenza tra circonferenza torace e girovita:</b></td>
-			<td><?php $differenza_tg = ($utente->getCirconferenzaTorace($user_profile['email']) - $utente->getGirovita($user_profile['email'])); echo $differenza_tg;?></td>
+			<td><?php $differenza_tg = ($utente->getCirconferenzaTorace($user_profile['email']) - $utente->getGirovita($user_profile['email'])); echo $differenza_tg . " cm";?></td>
 			</tr>
 			<?php } ?>
 			
@@ -256,12 +256,12 @@ if(!$fbuser){
 			?>
 			<tr>
 			<td><b>Differenza tra larghezza fianchi e girovita:</b></td>
-			<td><?php $differenza_fg = ($utente->getLarghezzaFianchi($user_profile['email']) - $utente->getGirovita($user_profile['email'])); echo $differenza_fg;?></td>
+			<td><?php $differenza_fg = ($utente->getLarghezzaFianchi($user_profile['email']) - $utente->getGirovita($user_profile['email'])); echo $differenza_fg . " cm";?></td>
 			</tr><?php
 			}else{ ?>
 			<tr>
 			<td><b>Differenza tra circonferenza fianchi e girovita:</b></td>
-			<td><?php $differenza_fg = ($utente->getCirconferenzaFianchi($user_profile['email']) - $utente->getGirovita($user_profile['email'])); echo $differenza_fg;?></td>
+			<td><?php $differenza_fg = ($utente->getCirconferenzaFianchi($user_profile['email']) - $utente->getGirovita($user_profile['email'])); echo $differenza_fg . " cm";?></td>
 			</tr>
 			<?php } ?>
 			
@@ -269,12 +269,12 @@ if(!$fbuser){
 			?>
 			<tr>
 			<td><b>Rapporto larghezza torace su girovita:</b></td>
-			<td><?php if($utente->getGirovita($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_tg = ($utente->getLarghezzaTorace($user_profile['email']) / $utente->getGirovita($user_profile['email'])); echo $rapporto_tg;}?></td>
+			<td><?php if($utente->getGirovita($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_tg = ($utente->getLarghezzaTorace($user_profile['email']) / $utente->getGirovita($user_profile['email'])); echo $rapporto_tg . " cm";}?></td>
 			</tr><?php
 			}else{ ?>
 			<tr>
 			<td><b>Rapporto circonferenza torace su girovita:</b></td>
-			<td><?php if($utente->getGirovita($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_tg = ($utente->getCirconferenzaTorace($user_profile['email']) / $utente->getGirovita($user_profile['email'])); echo $rapporto_tg;}?></td>
+			<td><?php if($utente->getGirovita($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_tg = ($utente->getCirconferenzaTorace($user_profile['email']) / $utente->getGirovita($user_profile['email'])); echo $rapporto_tg . " cm";}?></td>
 			</tr>
 			<?php } ?>
 			
@@ -282,12 +282,12 @@ if(!$fbuser){
 			?>
 			<tr>
 			<td><b>Rapporto larghezza fianchi su girovita:</b></td>
-			<td><?php if($utente->getGirovita($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_fg = ($utente->getLarghezzaFianchi($user_profile['email']) / $utente->getGirovita($user_profile['email'])); echo $rapporto_fg;}?></td>
+			<td><?php if($utente->getGirovita($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_fg = ($utente->getLarghezzaFianchi($user_profile['email']) / $utente->getGirovita($user_profile['email'])); echo $rapporto_fg . " cm";}?></td>
 			</tr><?php
 			}else{ ?>
 			<tr>
 			<td><b>Rapporto circonferenza fianchi su girovita:</b></td>
-			<td><?php if($utente->getGirovita($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_fg = ($utente->getCirconferenzaFianchi($user_profile['email']) / $utente->getGirovita($user_profile['email'])); echo $rapporto_fg;}?></td>
+			<td><?php if($utente->getGirovita($user_profile['email'])==0) echo "le tue informazioni sono da modificare"; else{ $rapporto_fg = ($utente->getCirconferenzaFianchi($user_profile['email']) / $utente->getGirovita($user_profile['email'])); echo $rapporto_fg . " cm";}?></td>
 			</tr>
 			<?php } ?>
 			</table>

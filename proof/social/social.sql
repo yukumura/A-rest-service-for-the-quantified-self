@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Dic 11, 2015 alle 17:06
+-- Creato il: Dic 14, 2015 alle 14:13
 -- Versione del server: 5.6.25
 -- Versione PHP: 5.6.11
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `utente` (
   `larghezza_bacino` int(11) NOT NULL DEFAULT '0',
   `distanza_cresta_illiaca` int(11) NOT NULL DEFAULT '0',
   `distanza_malleolo` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `utente`
@@ -83,7 +83,7 @@ ALTER TABLE `utente`
 -- AUTO_INCREMENT per la tabella `utente`
 --
 ALTER TABLE `utente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=73;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=71;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
