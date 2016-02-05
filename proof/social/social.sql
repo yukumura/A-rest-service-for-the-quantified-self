@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Dic 14, 2015 alle 14:13
+-- Creato il: Feb 05, 2016 alle 17:14
 -- Versione del server: 5.6.25
 -- Versione PHP: 5.6.11
 
@@ -23,11 +23,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struttura della tabella `admin`
+--
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `admin`
+--
+
+INSERT INTO `admin` (`id`, `nome`, `password`) VALUES
+(0, 'admin', '21232f297a57a5a743894a0e4a801fc3');
+
+-- --------------------------------------------------------
+
+--
 -- Struttura della tabella `utente`
 --
 
 CREATE TABLE IF NOT EXISTS `utente` (
   `id` int(11) NOT NULL,
+  `id_facebook` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL,
   `nome` varchar(45) DEFAULT NULL,
   `cognome` varchar(45) DEFAULT NULL,
@@ -54,36 +74,46 @@ CREATE TABLE IF NOT EXISTS `utente` (
   `larghezza_bacino` int(11) NOT NULL DEFAULT '0',
   `distanza_cresta_illiaca` int(11) NOT NULL DEFAULT '0',
   `distanza_malleolo` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `utente`
 --
 
-INSERT INTO `utente` (`id`, `email`, `nome`, `cognome`, `sesso`, `peso`, `altezza`, `circonferenza_torace`, `girovita`, `lunghezza_braccio`, `lunghezza_gamba`, `circonferenza_fianchi`, `circonferenza_bacino`, `circonferenza_coscia_a`, `circonferenza_coscia_g`, `lunghezza_coscia`, `lunghezza_tibia`, `circonferenza_bicipite`, `lunghezza_omero`, `lunghezza_avambraccio`, `larghezza_spalle`, `larghezza_torace`, `larghezza_girovita`, `larghezza_fianchi`, `larghezza_bacino`, `distanza_cresta_illiaca`, `distanza_malleolo`) VALUES
-(0, 'admin', 'admin', 'admin', 'uomo', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(70, 'yukumurauo@gmail.com', 'Alberto', 'Cicilloni', 'uomo', 85, 185, 26, 2, 3, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 6);
+INSERT INTO `utente` (`id`, `id_facebook`, `email`, `nome`, `cognome`, `sesso`, `peso`, `altezza`, `circonferenza_torace`, `girovita`, `lunghezza_braccio`, `lunghezza_gamba`, `circonferenza_fianchi`, `circonferenza_bacino`, `circonferenza_coscia_a`, `circonferenza_coscia_g`, `lunghezza_coscia`, `lunghezza_tibia`, `circonferenza_bicipite`, `lunghezza_omero`, `lunghezza_avambraccio`, `larghezza_spalle`, `larghezza_torace`, `larghezza_girovita`, `larghezza_fianchi`, `larghezza_bacino`, `distanza_cresta_illiaca`, `distanza_malleolo`) VALUES
+(93, '10206983607087370', 'yukumuradota@gmail.com', 'Alberto', 'Cicilloni', 'uomo', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 --
 -- Indici per le tabelle scaricate
 --
 
 --
+-- Indici per le tabelle `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indici per le tabelle `utente`
 --
 ALTER TABLE `utente`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `id_facebook` (`id_facebook`);
 
 --
 -- AUTO_INCREMENT per le tabelle scaricate
 --
 
 --
+-- AUTO_INCREMENT per la tabella `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT per la tabella `utente`
 --
 ALTER TABLE `utente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=94;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
