@@ -3,6 +3,7 @@
 				
 				include_once("/facebook_login_with_php/includes/functions.php");
 				require_once('/facebook_login_with_php/utente.php');
+				require_once('/facebook_login_with_php/admin.php');
 				
 				$email=$_POST['email'];
 				$password=$_POST['password'];
@@ -11,11 +12,9 @@
 				
 				if($controllo){
 					
-					$utente = new utente();
+					$admin = new admin();
 					session_start();
-					/* $_SESSION['email'] = $email; 
-					$_SESSION['password'] = $password; */
-					$_SESSION['id'] = $utente->getId($email);
+					$_SESSION['id'] = $admin->getId($email);
 					
 					header("location: http://localhost/proof/social/admin");
 				}else{

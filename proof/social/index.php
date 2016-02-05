@@ -23,15 +23,13 @@ if(!$fbuser){
 	$output = '<a href="'.$loginUrl.'"><img src="facebook_login_with_php/images/logofacebook.png" height="42" width="42"></a>'; 	
 }else{
 	$user_profile = $facebook->api('/me?fields=first_name,last_name,email,gender,id');
-	checkuser($user_profile['email'], $user_profile['first_name'], $user_profile['last_name'], $user_profile['gender']);
+	checkuser($user_profile['email'], $user_profile['first_name'], $user_profile['last_name'], $user_profile['gender'], $user_profile['id']);
 	$_SESSION['id_utente'] = $utente->getId($user_profile['email']);
-}
-	
+}	
 ?>
 <?php 
 
 	if(isset($user_profile)){ //se ha loggato mediante facebook
-		
 			?>
 			<nav class="navbar navbar-inverse">
 				<div class="container-fluid">
@@ -44,7 +42,6 @@ if(!$fbuser){
 					<li class="active" id="prima_pagina"><a href="#">Informazioni principali</a></li>
 					<li id="seconda_pagina"><a href="#">Informazioni derivate</a></li>
 				</ul>
-      
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="http://localhost/proof/social/"><span class="glyphicon glyphicon-user"></span><?php echo " " . $user_profile['first_name'] . " " . $user_profile['last_name'];?></a></li>
 					<li><a href="http://localhost/proof/social/facebook_login_with_php/logout.php?logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
